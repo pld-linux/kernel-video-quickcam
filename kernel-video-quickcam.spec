@@ -2,8 +2,6 @@
 # conditional build
 # _without_dist_kernel          without distribution kernel
 
-%define		_kernel_ver	%(grep UTS_RELEASE %{_kernelsrcdir}/include/linux/version.h 2>/dev/null | cut -d"\\"" -f2)
-%define		_kernel_ver_str	%(echo %{_kernel_ver} | sed s/-/_/g)
 %define		_rel	2
 
 Summary:        kernel module for Logitech QuickCam USB cameras
@@ -20,7 +18,6 @@ URL:            http://qce-ga.sourceforge.net/
 PreReq:		/sbin/depmod
 PreReq:         modutils >= 2.3.18-2
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
-ExclusiveArch:  %{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
