@@ -1,12 +1,11 @@
-#
 # conditional build
 # _without_dist_kernel          without distribution kernel
-#
+
 Summary:	Kernel module for Logitech QuickCam USB cameras
 Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
 Name:		kernel-video-quickcam
 Version:	0.40c
-%define	_rel	5
+%define	_rel	6
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
