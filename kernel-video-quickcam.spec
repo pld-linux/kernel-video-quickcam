@@ -2,12 +2,12 @@
 # conditional build
 # _without_dist_kernel          without distribution kernel
 
-%define		_rel	2
+%define		_rel	3
 
 Summary:        kernel module for Logitech QuickCam USB cameras
 Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
 Name:		kernel-video-quickcam
-Version:	cvs20020222
+Version:	0.40c
 Release:	%{_rel}@%{_kernel_ver_str}
 License:        GPL
 Group:		Base/Kernel
@@ -26,15 +26,19 @@ Logitech QuickCam USB cameras driver.
 Sterownik do kamer USB Logitech QuickCam.
 
 %prep
-%setup -q -n quickcam
+%setup -q -n qce-ga-%{version}
 
 %build
+%{__make}
+cd testquickcam
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/video
 install mod_quickcam.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/video/quickcam.o
+install -d $RPM_BUILD_ROOT/usr/sbin
+install testquickcam/testquickcam $RPM_BUILD_ROOT/usr/sbin
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
@@ -49,3 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 /lib/modules/%{_kernel_ver}/video/*
+%attr(755,root,users) /usr/sbin/testquickcam
