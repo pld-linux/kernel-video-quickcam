@@ -1,9 +1,8 @@
-$Revision: 1.9 $, $Date: 2002-08-11 16:30:58 $
 
 # conditional build
 # _without_dist_kernel          without distribution kernel
 
-%define		_rel	2
+%define		_rel	3
 
 Summary:        kernel module for Logitech QuickCam USB cameras
 Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
@@ -14,7 +13,7 @@ License:        GPL
 Group:		Base/Kernel
 Source0:        http://download.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
 URL:            http://qce-ga.sourceforge.net/
-%{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.4.0 }
+%{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
 PreReq:		/sbin/depmod
 PreReq:         modutils >= 2.3.18-2
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
