@@ -1,9 +1,9 @@
-# $Revision 1.8  2002/08/11 08:34:40 $
+$Revision: 1.9 $, $Date: 2002-08-11 16:30:58 $
 
 # conditional build
 # _without_dist_kernel          without distribution kernel
 
-%define		_rel	1
+%define		_rel	2
 
 Summary:        kernel module for Logitech QuickCam USB cameras
 Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
