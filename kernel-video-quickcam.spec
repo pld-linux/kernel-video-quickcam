@@ -1,18 +1,18 @@
 # conditional build
-# _without_dist_kernel          without distribution kernel
+# _without_dist_kernel		without distribution kernel
 
 Summary:	Kernel module for Logitech QuickCam USB cameras
 Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
 Name:		kernel-video-quickcam
 Version:	0.40c
-%define	_rel	8
+%define	_rel	9
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
 Source0:	http://download.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
 # Source0-md5:	d72b07e7fe370e553b517611d502ec85
 URL:		http://qce-ga.sourceforge.net/
-%{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
+%{!?_without_dist_kernel:BuildRequires:	kernel-headers >= 2.2.0 }
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
 Requires(post,postun):	modutils >= 2.3.18-2
@@ -40,11 +40,11 @@ Logitech QuickCam USB cameras driver for SMP kernel.
 Sterownik do kamer USB Logitech QuickCam dla j±dra SMP.
 
 %package -n qce-qa
-Summary:        Documentation and test program to Logitech QuickCam USB
-Summary(pl):    Dokumentacja i program testuj±cy do kamer Logitech QuickCam USB
-Release:        %{_rel}
-Group:          Base/Kernel
-Requires:       %{name} = %{version}
+Summary:	Documentation and test program to Logitech QuickCam USB
+Summary(pl):	Dokumentacja i program testuj±cy do kamer Logitech QuickCam USB
+Release:	%{_rel}
+Group:		Base/Kernel
+Requires:	%{name} = %{version}
 
 %description -n qce-qa
 Documentation and test program to Logitech QuickCam USB.
@@ -57,13 +57,13 @@ Dokumentacja i program testuj±cy do kamer Logitech QuickCam USB.
 
 %build
 %{__make} \
-        CC=%{kgcc} \
-        INCLUDES="%{rpmcflags} -I. -D__KERNEL_SMP=1 -D__SMP__ -I%{_kernelsrcdir}/include"
-mv -f mod_quickcam.o  quickcam-smp.o
+	CC=%{kgcc} \
+	INCLUDES="%{rpmcflags} -I. -D__KERNEL_SMP=1 -D__SMP__ -I%{_kernelsrcdir}/include"
+mv -f mod_quickcam.o quickcam-smp.o
 #%%{__make} clean
 %{__make} \
-        CC=%{kgcc} \
-        INCLUDES="%{rpmcflags} -I.  -I%{_kernelsrcdir}/include"
+	CC=%{kgcc} \
+	INCLUDES="%{rpmcflags} -I. -I%{_kernelsrcdir}/include"
 mv -f mod_quickcam.o quickcam.o
 
 cd testquickcam
