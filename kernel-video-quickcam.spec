@@ -60,7 +60,7 @@ Dokumentacja i program testuj±cy do kamer Logitech QuickCam USB.
         CC=%{kgcc} \
         INCLUDES="%{rpmcflags} -I. -D__KERNEL_SMP=1 -D__SMP__ -I%{_kernelsrcdir}/include"
 mv -f mod_quickcam.o  quickcam-smp.o
-#%{__make} clean
+#%%{__make} clean
 %{__make} \
         CC=%{kgcc} \
         INCLUDES="%{rpmcflags} -I.  -I%{_kernelsrcdir}/include"
