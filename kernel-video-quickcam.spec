@@ -5,12 +5,13 @@ Summary:	Kernel module for Logitech QuickCam USB cameras
 Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
 Name:		kernel-video-quickcam
 Version:	0.40c
-%define	_rel	9
+%define	_rel	10
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
 Source0:	http://download.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
 # Source0-md5:	d72b07e7fe370e553b517611d502ec85
+Patch0:		%{name}-alpha.patch
 URL:		http://qce-ga.sourceforge.net/
 %{!?_without_dist_kernel:BuildRequires:	kernel-headers >= 2.2.0 }
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
@@ -54,6 +55,7 @@ Dokumentacja i program testuj±cy do kamer Logitech QuickCam USB.
 
 %prep
 %setup -q -n qce-ga-%{version}
+%patch0 -p1
 
 %build
 %{__make} \
