@@ -9,8 +9,7 @@ Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
 Name:		kernel-video-quickcam
 Version:	cvs20020222
 Release:	%{_rel}@%{_kernel_ver_str}
-License:        nVidia
-Vendor:         nVidia Corp.
+License:        GPL
 Group:		Base/Kernel
 Source0:        http://download.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
 URL:            http://qce-ga.sourceforge.net/
