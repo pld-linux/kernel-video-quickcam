@@ -13,8 +13,6 @@ Release:	%{_rel}@%{_kernel_ver_str}
 License:        nVidia
 Vendor:         nVidia Corp.
 Group:		Base/Kernel
-Group(de):	Grundsätzlich/Kern
-Group(pl):	Podstawowe/J±dro
 URL:            http://qce-ga.sourceforge.net/
 Source0:        http://download.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
 %{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
