@@ -39,6 +39,19 @@ Logitech QuickCam USB cameras driver for SMP kernel.
 %description -n kernel-smp-video-quickcam -l pl
 Sterownik do kamer USB Logitech QuickCam dla j±dra SMP.
 
+%package -n qce-qa
+Summary:        Doc and test program to  Logitech QuickCam USB 
+Summary(pl):    Dokuemntacja i program testuj±cy kamere Logitech QuickCam USB
+Release:        %{_rel}
+Group:          Base/Kernel
+Requires:       %{name} = %{version}
+
+%description -n qce-qa
+Doc and test program to  Logitech QuickCam USB
+
+%description -n qce-qa -l pl
+Dokuemntacja i program testuj±cy kamere Logitech QuickCam USB
+
 %prep
 %setup -q -n qce-ga-%{version}
 
@@ -65,7 +78,7 @@ cd testquickcam
 rm -rf $RPM_BUILD_ROOT
 
 #install -d $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/video
-install -D quickcam-smp.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/video/quickcam-smp.o
+install -D quickcam-smp.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/video/quickcam.o
 install -D quickcam.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/video/quickcam.o
 
 install -d $RPM_BUILD_ROOT/usr/sbin
@@ -88,12 +101,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
 /lib/modules/%{_kernel_ver}/video/*
-%attr(755,root,users) /usr/sbin/testquickcam
 
 %files -n kernel-smp-video-quickcam
 %defattr(644,root,root,755)
-%doc README
 /lib/modules/%{_kernel_ver}smp/video/*
+
+%files -n qce-qa
+%defattr(644,root,root,755)
+%doc README
 %attr(755,root,users) /usr/sbin/testquickcam
