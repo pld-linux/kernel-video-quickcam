@@ -19,8 +19,8 @@ URL:            http://qce-ga.sourceforge.net/
 %{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
 PreReq:		/sbin/depmod
 PreReq:         modutils >= 2.3.18-2
-%{!?_without_dist_kernel:Conflicts:	kernel < %{_kernel_ver}, kernel > %{_kernel_ver}}
-Exclusivearch:  %{ix86}
+%{!?_without_dist_kernel:%requires_releq_kernel_up}
+ExclusiveArch:  %{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
