@@ -7,14 +7,15 @@
 %define		_rel	1
 
 Summary:        kernel module for Logitech QuickCam USB cameras
+Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
 Name:		kernel-video-quickcam
 Version:	cvs20020222
 Release:	%{_rel}@%{_kernel_ver_str}
 License:        nVidia
 Vendor:         nVidia Corp.
 Group:		Base/Kernel
-URL:            http://qce-ga.sourceforge.net/
 Source0:        http://download.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
+URL:            http://qce-ga.sourceforge.net/
 %{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
 PreReq:		/sbin/depmod
 PreReq:         modutils >= 2.3.18-2
@@ -22,12 +23,11 @@ PreReq:         modutils >= 2.3.18-2
 Exclusivearch:  %{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
-Logitech QuickCam USB cameras driver
+Logitech QuickCam USB cameras driver.
 
 %description -l pl
-Sterownik do kamer USB Logitech QuickCam
+Sterownik do kamer USB Logitech QuickCam.
 
 %prep
 %setup -q -n quickcam
@@ -50,7 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun
 /sbin/depmod -a
-
 
 %files
 %defattr(644,root,root,755)
