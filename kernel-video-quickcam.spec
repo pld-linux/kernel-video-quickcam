@@ -14,6 +14,7 @@ Source0:	http://dl.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
 # Source0-md5:	4e028c21bb44400f295f8c029892e559
 URL:		http://qce-ga.sourceforge.net/
 %{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
+BuildRequires:	rpmbuild(macros) >= 1.118
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
 Requires(post,postun):	modutils >= 2.3.18-2
@@ -84,16 +85,16 @@ install testquickcam/testquickcam $RPM_BUILD_ROOT/usr/sbin
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver} }%{_kernel_ver}
+%depmod %{_kernel_ver}
 
 %postun
-/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver} }%{_kernel_ver}
+%depmod %{_kernel_ver}
 
 %post	-n kernel-smp-video-quickcam
-/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver}smp }%{_kernel_ver}smp
+%depmod %{_kernel_ver}smp
 
 %postun -n kernel-smp-video-quickcam
-/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver}smp }%{_kernel_ver}smp
+%depmod %{_kernel_ver}smp
 
 %files
 %defattr(644,root,root,755)
