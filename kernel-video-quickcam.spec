@@ -10,7 +10,7 @@ Version:	0.40c
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
-Source0:	http://download.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
 # Source0-md5:	4e028c21bb44400f295f8c029892e559
 URL:		http://qce-ga.sourceforge.net/
 %{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
