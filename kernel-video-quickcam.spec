@@ -13,7 +13,7 @@ Group:		Base/Kernel
 Source0:	http://dl.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
 # Source0-md5:	4e028c21bb44400f295f8c029892e559
 URL:		http://qce-ga.sourceforge.net/
-%{!?_without_dist_kernel:BuildRequires:         kernel-headers >= 2.2.0 }
+%{!?_without_dist_kernel:BuildRequires:	kernel-headers >= 2.2.0 }
 BuildRequires:	rpmbuild(macros) >= 1.118
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
@@ -42,11 +42,11 @@ Logitech QuickCam USB cameras driver for SMP kernel.
 Sterownik do kamer USB Logitech QuickCam dla j±dra SMP.
 
 %package -n qce-qa
-Summary:        Documentation and test program to Logitech QuickCam USB
-Summary(pl):    Dokumentacja i program testuj±cy do kamer Logitech QuickCam USB
-Release:        %{_rel}
-Group:          Base/Kernel
-Requires:       %{name} = %{version}
+Summary:	Documentation and test program to Logitech QuickCam USB
+Summary(pl):	Dokumentacja i program testuj±cy do kamer Logitech QuickCam USB
+Release:	%{_rel}
+Group:		Base/Kernel
+Requires:	%{name} = %{version}
 
 %description -n qce-qa
 Documentation and test program to Logitech QuickCam USB.
