@@ -36,8 +36,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/video
 install mod_quickcam.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/video/quickcam.o
 
-gzip -9nf README
-
 %clean 
 rm -rf $RPM_BUILD_ROOT
 
@@ -49,5 +47,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README
 /lib/modules/%{_kernel_ver}/video/*
