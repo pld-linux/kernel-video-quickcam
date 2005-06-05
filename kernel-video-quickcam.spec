@@ -5,13 +5,13 @@
 Summary:	Kernel module for Logitech QuickCam USB cameras
 Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
 Name:		kernel-video-quickcam
-Version:	0.40c
-%define	_rel	9
+Version:	0.40d
+%define	_rel	1
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
 Source0:	http://dl.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
-# Source0-md5:	4e028c21bb44400f295f8c029892e559
+# Source0-md5:	afd7895c90aef62c29d2ffa7beb63961
 URL:		http://qce-ga.sourceforge.net/
 %{!?_without_dist_kernel:BuildRequires:	kernel-headers >= 2.2.0 }
 BuildRequires:	rpmbuild(macros) >= 1.118
@@ -78,8 +78,8 @@ rm -rf $RPM_BUILD_ROOT
 install -D quickcam-smp.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/video/quickcam.o
 install -D quickcam.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/video/quickcam.o
 
-install -d $RPM_BUILD_ROOT/usr/sbin
-install testquickcam/testquickcam $RPM_BUILD_ROOT/usr/sbin
+install -d $RPM_BUILD_ROOT%{_sbindir}
+install testquickcam/testquickcam $RPM_BUILD_ROOT%{_sbindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -107,4 +107,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n qce-qa
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,users) /usr/sbin/testquickcam
+%attr(755,root,users) %{_sbindir}/testquickcam
