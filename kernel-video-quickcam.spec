@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_dist_kernel          without distribution kernel
+%bcond_without dist_kernel	# without distribution kernel
 #
 Summary:	Kernel module for Logitech QuickCam USB cameras
 Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
@@ -13,9 +13,9 @@ Group:		Base/Kernel
 Source0:	http://dl.sourceforge.net/qce-ga/qce-ga-%{version}.tar.gz
 # Source0-md5:	afd7895c90aef62c29d2ffa7beb63961
 URL:		http://qce-ga.sourceforge.net/
-%{!?_without_dist_kernel:BuildRequires:	kernel-headers >= 2.2.0 }
+%{?with_dist_kernel:BuildRequires:	kernel-headers >= 2.2.0 }
 BuildRequires:	rpmbuild(macros) >= 1.118
-%{!?_without_dist_kernel:%requires_releq_kernel_up}
+%{?with_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
 Requires(post,postun):	modutils >= 2.3.18-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,7 +31,7 @@ Summary:	SMP kernel module for Logitech QuickCam USB cameras
 Summary(pl):	Modu³ j±dra SMP do kamer USB Logitech QuickCam
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
-%{!?_without_dist_kernel:%requires_releq_kernel_smp}
+%{?with_dist_kernel:%requires_releq_kernel_smp}
 Requires(post,postun):	/sbin/depmod
 Requires(post,postun):	modutils >= 2.3.18-2
 
