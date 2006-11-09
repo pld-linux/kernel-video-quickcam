@@ -46,7 +46,7 @@ Summary:	Documentation and test program to Logitech QuickCam USB
 Summary(pl):	Dokumentacja i program testuj±cy do kamer Logitech QuickCam USB
 Release:	%{_rel}
 Group:		Base/Kernel
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description -n qce-qa
 Documentation and test program to Logitech QuickCam USB.
