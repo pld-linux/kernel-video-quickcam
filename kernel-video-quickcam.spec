@@ -3,7 +3,7 @@
 %bcond_without dist_kernel	# without distribution kernel
 #
 Summary:	Kernel module for Logitech QuickCam USB cameras
-Summary(pl):	Modu³ j±dra do kamer USB Logitech QuickCam
+Summary(pl.UTF-8):   ModuÅ‚ jÄ…dra do kamer USB Logitech QuickCam
 Name:		kernel-video-quickcam
 Version:	0.40d
 %define	_rel	1
@@ -23,12 +23,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Logitech QuickCam USB cameras driver.
 
-%description -l pl
+%description -l pl.UTF-8
 Sterownik do kamer USB Logitech QuickCam.
 
 %package -n kernel-smp-video-quickcam
 Summary:	SMP kernel module for Logitech QuickCam USB cameras
-Summary(pl):	Modu³ j±dra SMP do kamer USB Logitech QuickCam
+Summary(pl.UTF-8):   ModuÅ‚ jÄ…dra SMP do kamer USB Logitech QuickCam
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
@@ -38,12 +38,12 @@ Requires(post,postun):	modutils >= 2.3.18-2
 %description -n kernel-smp-video-quickcam
 Logitech QuickCam USB cameras driver for SMP kernel.
 
-%description -n kernel-smp-video-quickcam -l pl
-Sterownik do kamer USB Logitech QuickCam dla j±dra SMP.
+%description -n kernel-smp-video-quickcam -l pl.UTF-8
+Sterownik do kamer USB Logitech QuickCam dla jÄ…dra SMP.
 
 %package -n qce-qa
 Summary:	Documentation and test program to Logitech QuickCam USB
-Summary(pl):	Dokumentacja i program testuj±cy do kamer Logitech QuickCam USB
+Summary(pl.UTF-8):   Dokumentacja i program testujÄ…cy do kamer Logitech QuickCam USB
 Release:	%{_rel}
 Group:		Base/Kernel
 Requires:	%{name} = %{version}-%{release}
@@ -51,8 +51,8 @@ Requires:	%{name} = %{version}-%{release}
 %description -n qce-qa
 Documentation and test program to Logitech QuickCam USB.
 
-%description -n qce-qa -l pl
-Dokumentacja i program testuj±cy do kamer Logitech QuickCam USB.
+%description -n qce-qa -l pl.UTF-8
+Dokumentacja i program testujÄ…cy do kamer Logitech QuickCam USB.
 
 %prep
 %setup -q -n qce-ga-%{version}
