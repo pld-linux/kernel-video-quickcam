@@ -3,7 +3,7 @@
 %bcond_without dist_kernel	# without distribution kernel
 #
 Summary:	Kernel module for Logitech QuickCam USB cameras
-Summary(pl.UTF-8):   Moduł jądra do kamer USB Logitech QuickCam
+Summary(pl.UTF-8):	Moduł jądra do kamer USB Logitech QuickCam
 Name:		kernel-video-quickcam
 Version:	0.40d
 %define	_rel	1
@@ -28,7 +28,7 @@ Sterownik do kamer USB Logitech QuickCam.
 
 %package -n kernel-smp-video-quickcam
 Summary:	SMP kernel module for Logitech QuickCam USB cameras
-Summary(pl.UTF-8):   Moduł jądra SMP do kamer USB Logitech QuickCam
+Summary(pl.UTF-8):	Moduł jądra SMP do kamer USB Logitech QuickCam
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
@@ -43,7 +43,7 @@ Sterownik do kamer USB Logitech QuickCam dla jądra SMP.
 
 %package -n qce-qa
 Summary:	Documentation and test program to Logitech QuickCam USB
-Summary(pl.UTF-8):   Dokumentacja i program testujący do kamer Logitech QuickCam USB
+Summary(pl.UTF-8):	Dokumentacja i program testujący do kamer Logitech QuickCam USB
 Release:	%{_rel}
 Group:		Base/Kernel
 Requires:	%{name} = %{version}-%{release}
